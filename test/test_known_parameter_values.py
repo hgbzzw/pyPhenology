@@ -105,6 +105,22 @@ test_cases.append({'test_name' : 'Naive Model Aspen leaves',
                    'fitting_ranges':{},
                    'fitting_params':thorough_DE_optimization})
 
+test_cases.append({'test_name' : 'MSB Vaccinium Leaves',
+                   'model' : models.MSB,
+                   'fitting_obs':leaves_obs,
+                   'fitting_temp':vaccinium_temp,
+                   'expected_params': {'a':1026, 'b':-481, 'c':0},
+                   'fitting_ranges':{'a':(1000,1100), 'b':(-500,-400), 'c':(0.001,0.01),'d':(), 't1':0, 'threshold':5},
+                   'fitting_params':thorough_DE_optimization})
+
+test_cases.append({'test_name' : 'MSB Vaccinium Flowers',
+                   'model' : models.MSB,
+                   'fitting_obs':flowers_obs,
+                   'fitting_temp':vaccinium_temp,
+                   'expected_params': {'a':1026, 'b':-481, 'c':0},
+                   'fitting_ranges':{'a':(1000,1100), 'b':(-500,-400), 'c':(0.001,0.01), 't1':0, 'threshold':5},
+                   'fitting_params':thorough_DE_optimization})
+
 #######################################
 # Get estimates for all models
 for case in test_cases:
